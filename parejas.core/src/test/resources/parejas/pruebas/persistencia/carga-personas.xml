@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <personas id="2" nombre="luis" edad="62" altura="1.77" sexo="H"/>
+  <personas id="3" nombre="ana" edad="71" altura="1.77" sexo="M"/>
+  <personas id="4" nombre="maria" edad="79" altura="1.57" sexo="M"/>
+</dataset>

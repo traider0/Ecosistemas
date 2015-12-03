@@ -1,0 +1,65 @@
+package parejas.presentacion;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import parejas.modelo.Persona;
+import parejas.negocio.ServicioBusquedaParejas;
+import parejas.negocio.ServicioBusquedaParejasImpl;
+import parejas.persistencia.PersonaDao;
+import parejas.persistencia.PersonaDaoMemoriaImpl;
+
+
+@WebServlet("/ControlBusquedas")
+public class ControlBusquedas extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private ServicioBusquedaParejas buscador;
+	
+	@PostConstruct
+	public void inicializar(){
+		PersonaDao personaDao=new PersonaDaoMemoriaImpl();
+		buscador=new ServicioBusquedaParejasImpl(personaDao);
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//recibimos los datos desde la vista
+		Persona usuario=new Persona();
+		usuario.setNombre(request.getParameter("nombre"));
+		usuario.setEdad(Integer.parseInt(request.getParameter("edad")));
+		usuario.setAltura(Float.parseFloat(request.getParameter("altura")));;
+		usuario.setSexo(request.getParameter("sexo").trim().toUpperCase().charAt(0));
+		
+		//buscamos su pareja ideal
+		Persona ideal = buscador.encontrarIdeal(usuario);
+		//recursos generales de la peticion
+		String pantalla="resultados.jsp";
+		String msg="";
+		Map<String,Object> datos=new HashMap<>();
+		
+		//realizamos los casos de uso
+		if(ideal!=null){
+			msg="Enhorabuena "+usuario.getNombre();
+			datos.put("ideal",ideal);
+		}else{
+			msg="Lastima "+usuario.getNombre();
+			datos.put("afines",buscador.encontrarAfines(usuario));
+
+		}
+		//pasamos la informacion del controlador a la vista
+		request.setAttribute("msg", msg);
+		request.setAttribute("datos", datos);
+		//decidimos la vista a mostrar
+		request.getRequestDispatcher(pantalla)
+			.forward(request, response);
+				
+	}
+
+}

@@ -1,0 +1,157 @@
+Found a 72 line (406 tokens) duplication in the following files: 
+Starting at line 19 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarIdealSeleniumWebDriver.java
+Starting at line 19 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarAfinesSeleniumWebDriver.java
+
+public class EncontrarIdealSeleniumWebDriver {
+  private WebDriver driver;
+  private String baseUrl;
+  private boolean acceptNextAlert = true;
+  private StringBuffer verificationErrors = new StringBuffer();
+
+  @Before
+  public void setUp() throws Exception {
+    driver = new FirefoxDriver();
+    baseUrl = "http://localhost:8080/web";
+    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+  }
+
+  @Test
+  public void testEncontrarafines() throws Exception {
+    driver.get(baseUrl + "/busquedas.jsp");
+    driver.findElement(By.name("nombre")).clear();
+    driver.findElement(By.name("nombre")).sendKeys("ana");
+    driver.findElement(By.name("edad")).clear();
+    driver.findElement(By.name("edad")).sendKeys("25");
+    driver.findElement(By.name("altura")).clear();
+    driver.findElement(By.name("altura")).sendKeys("1.76");
+    driver.findElement(By.name("sexo")).clear();
+    driver.findElement(By.name("sexo")).sendKeys("M");
+    driver.findElement(By.cssSelector("input[type=\"submit\"]")).click();
+    assertEquals(".:Resultados de la busqueda:.", driver.getTitle());
+    // Warning: assertTextPresent may require manual changes
+    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*$"));
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    driver.quit();
+    String verificationErrorString = verificationErrors.toString();
+    if (!"".equals(verificationErrorString)) {
+      fail(verificationErrorString);
+    }
+  }
+
+  private boolean isElementPresent(By by) {
+    try {
+      driver.findElement(by);
+      return true;
+    } catch (NoSuchElementException e) {
+      return false;
+    }
+  }
+
+  private boolean isAlertPresent() {
+    try {
+      driver.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
+  }
+
+  private String closeAlertAndGetItsText() {
+    try {
+      Alert alert = driver.switchTo().alert();
+      String alertText = alert.getText();
+      if (acceptNextAlert) {
+        alert.accept();
+      } else {
+        alert.dismiss();
+      }
+      return alertText;
+    } finally {
+      acceptNextAlert = true;
+    }
+  }
+}
+=====================================================================
+Found a 27 line (130 tokens) duplication in the following files: 
+Starting at line 10 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarIdealSeleniumRC.java
+Starting at line 10 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarAfinesSeleniumRC.java
+
+public class EncontrarIdealSeleniumRC {
+	private Selenium selenium;
+
+	@Before
+	public void setUp() throws Exception {
+		selenium = new DefaultSelenium("localhost", 4444, "*chrome", "http://localhost:8080/web");
+		selenium.start();
+	}
+
+	@Test
+	public void testEncontrarafines() throws Exception {
+		selenium.open("/web/busquedas.jsp");
+		selenium.type("name=nombre", "ana");
+		selenium.type("name=edad", "25");
+		selenium.type("name=altura", "1.76");
+		selenium.type("name=sexo", "M");
+		selenium.click("css=input[type=\"submit\"]");
+		selenium.waitForPageToLoad("30000");
+		assertEquals(".:Resultados de la busqueda:.", selenium.getTitle());
+		assertTrue(selenium.isTextPresent(""));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		selenium.stop();
+	}
+}
+=====================================================================
+Found a 14 line (78 tokens) duplication in the following files: 
+Starting at line 16 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarIdealSeleniumRC.java
+Starting at line 16 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarAfinesSeleniumRC.java
+Starting at line 21 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarAfinesSeleniumBackedWebDriver.java
+
+		selenium.start();
+	}
+
+	@Test
+	public void testEncontrarafines() throws Exception {
+		selenium.open("/web/busquedas.jsp");
+		selenium.type("name=nombre", "ana");
+		selenium.type("name=edad", "25");
+		selenium.type("name=altura", "1.76");
+		selenium.type("name=sexo", "M");
+		selenium.click("css=input[type=\"submit\"]");
+		selenium.waitForPageToLoad("30000");
+		assertEquals(".:Resultados de la busqueda:.", selenium.getTitle());
+		assertTrue(selenium.isTextPresent(""));
+=====================================================================
+Found a 12 line (39 tokens) duplication in the following files: 
+Starting at line 18 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarIdealSeleniumBackedWebDriver.java
+Starting at line 14 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarAfinesSeleniumBackedWebDriver.java
+
+public class EncontrarIdealSeleniumBackedWebDriver {
+	private Selenium selenium;
+
+	@Before
+	public void setUp() throws Exception {
+		WebDriver driver = new FirefoxDriver();
+		String baseUrl = "http://localhost:8080/web";
+		selenium = new WebDriverBackedSelenium(driver, baseUrl);
+	}
+
+	@Test
+	public void testEncontrarIdealSeleniumBackedWebDriver() throws Exception {
+=====================================================================
+Found a 5 line (29 tokens) duplication in the following files: 
+Starting at line 25 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarIdealSeleniumRC.java
+Starting at line 34 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarIdealSeleniumBackedWebDriver.java
+Starting at line 25 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarAfinesSeleniumRC.java
+Starting at line 30 of E:\workspaces\ws_ecosistemas\parejas.web\src\test\java\integracion\EncontrarAfinesSeleniumBackedWebDriver.java
+
+		selenium.type("name=sexo", "M");
+		selenium.click("css=input[type=\"submit\"]");
+		selenium.waitForPageToLoad("30000");
+		assertEquals(".:Resultados de la busqueda:.", selenium.getTitle());
+		assertTrue(selenium.isTextPresent(""));

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>Biblioteca-Web</display-name>
+	<servlet>
+		<servlet-name>NewLibro</servlet-name>
+		<servlet-class>com.biblioteca.control.NewLibro</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetLibroServlet</servlet-name>
+		<servlet-class>com.biblioteca.control.GetLibroServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetAllLibrosServlet</servlet-name>
+		<servlet-class>com.biblioteca.control.GetAllLibrosServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>InsertarLibro</servlet-name>
+		<jsp-file>/WEB-INF/NewLibro.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>GetLibro</servlet-name>
+		<jsp-file>/WEB-INF/GetLibro.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>NewLibro</servlet-name>
+		<url-pattern>/NewLibro</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetLibroServlet</servlet-name>
+		<url-pattern>/GetLibro</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetAllLibrosServlet</servlet-name>
+		<url-pattern>/ListarLibros</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>InsertarLibro</servlet-name>
+		<url-pattern>/InsertarLibro</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetLibro</servlet-name>
+		<url-pattern>/BuscarLibro</url-pattern>
+	</servlet-mapping>
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+			<taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/fn</taglib-uri>
+			<taglib-location>/WEB-INF/tld/fn.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+			<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+			<taglib-location>/WEB-INF/tld/x.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>

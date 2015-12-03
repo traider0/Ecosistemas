@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: integracion.ProbarFuncionalidadWebHttpUnit
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.859 sec <<< FAILURE! - in integracion.ProbarFuncionalidadWebHttpUnit
+test(integracion.ProbarFuncionalidadWebHttpUnit)  Time elapsed: 1.859 sec  <<< ERROR!
+com.meterware.httpunit.HttpNotFoundException: Error on HTTP request: 404 No Encontrado [http://localhost:8080/busquedas.jsp]
+	at com.meterware.httpunit.WebClient.validateHeaders(WebClient.java:621)
+	at com.meterware.httpunit.WebClient.updateClient(WebClient.java:500)
+	at com.meterware.httpunit.WebWindow.updateWindow(WebWindow.java:192)
+	at com.meterware.httpunit.WebWindow.getSubframeResponse(WebWindow.java:183)
+	at com.meterware.httpunit.WebWindow.getResponse(WebWindow.java:158)
+	at com.meterware.httpunit.WebWindow.getResponse(WebWindow.java:125)
+	at com.meterware.httpunit.WebClient.getResponse(WebClient.java:96)
+	at integracion.ProbarFuncionalidadWebHttpUnit.test(ProbarFuncionalidadWebHttpUnit.java:25)
+

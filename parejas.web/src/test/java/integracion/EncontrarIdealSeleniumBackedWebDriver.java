@@ -1,0 +1,45 @@
+package integracion;
+
+import com.thoughtworks.selenium.Selenium;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverBackedSelenium;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+import java.util.regex.Pattern;
+
+import static org.apache.commons.lang3.StringUtils.join;
+
+public class EncontrarIdealSeleniumBackedWebDriver {
+	private Selenium selenium;
+
+	@Before
+	public void setUp() throws Exception {
+		WebDriver driver = new FirefoxDriver();
+		String baseUrl = "http://localhost:8080/web";
+		selenium = new WebDriverBackedSelenium(driver, baseUrl);
+	}
+
+	@Test
+	public void testEncontrarIdealSeleniumBackedWebDriver() throws Exception {
+		selenium.open("/web/busquedas.jsp");
+		selenium.type("name=nombre", "fer");
+		selenium.type("name=edad", "71");
+		selenium.type("name=altura", "1.76");
+		selenium.type("name=sexo", "H");
+		selenium.click("css=input[type=\"submit\"]");
+		selenium.waitForPageToLoad("30000");
+		assertEquals(".:Resultados de la busqueda:.", selenium.getTitle());
+		assertTrue(selenium.isTextPresent("ideal"));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		selenium.stop();
+	}
+}

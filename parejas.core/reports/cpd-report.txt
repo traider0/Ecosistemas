@@ -1,0 +1,136 @@
+Found a 18 line (116 tokens) duplication in the following files: 
+Starting at line 55 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\negocio\ProbarNegocioBusquedaParejasParametrico.java
+Starting at line 26 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\negocio\ProbarNegocioBusquedaParejasCopyPasteDatos.java
+
+	@Before
+	public void prepara() throws Exception {
+		//preparar el entorno
+		List<Persona> personas = Arrays.asList(
+			new Persona(1L,"pepe",77,1.67f,Persona.HOMBRE),
+			new Persona(2L,"luis",62,1.77f,Persona.HOMBRE),
+			new Persona(3L,"ana",71,1.77f,Persona.MUJER),
+			new Persona(4L,"maria",79,1.57f,Persona.MUJER));
+		for (Persona persona : personas) {
+			personaDao.guardar(persona);
+		}
+	}
+	
+	
+	@Test(timeout=1000)
+	public void probarServicio() throws Exception {
+	
+		Persona ideal=buscador.encontrarIdeal(usuario);
+=====================================================================
+Found a 31 line (108 tokens) duplication in the following files: 
+Starting at line 42 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaBaseDatosConELPropioDAO.java
+Starting at line 31 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\ProbarPersistenciaMemoria.java
+
+		personaDao=new PersonaDaoJDBCImpl(dataSource);
+		
+		
+	}
+
+	@AfterClass
+	public static void alFinal() throws Exception {
+	}
+
+	
+
+	@Before
+	public void prepara() throws Exception {
+		//preparar el entorno
+		personas = 
+				Arrays.asList(
+					new Persona(1L,"pepe",77,1.67f,Persona.HOMBRE),
+					new Persona(2L,"luis",62,1.77f,Persona.HOMBRE),
+					new Persona(3L,"ana",71,1.77f,Persona.MUJER),
+					new Persona(4L,"maria",79,1.57f,Persona.MUJER));
+	}
+
+	@After
+	public void limpia() throws Exception {
+		//List<Persona> listado = personaDao.listar();
+		//for (Persona persona : listado) {
+			//personaDao.borrar(persona);
+		//}
+	}
+
+	@Test
+=====================================================================
+Found a 22 line (102 tokens) duplication in the following files: 
+Starting at line 75 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaBaseDatosConELPropioDAO.java
+Starting at line 56 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\ProbarPersistenciaMemoria.java
+
+	public void pruebaPersonaDao() {
+			
+		int ti=personaDao.listar().size();
+		for (Persona persona : personas) {
+			personaDao.guardar(persona);
+		}
+		int tf=personaDao.listar().size();
+		//Assert.assertEquals("se incrementa en...",ti+personas.size(), ti);
+		assertEquals("se incrementa en...",ti+personas.size(), tf);
+		
+		Persona persona = personaDao.buscar(1L);
+		assertNotNull(persona);
+		assertEquals("pepe", persona.getNombre());
+		
+		personaDao.borrar(persona);
+		persona = personaDao.buscar(1L);
+		assertNull(persona);
+		
+		
+	}
+
+}
+=====================================================================
+Found a 6 line (70 tokens) duplication in the following files: 
+Starting at line 56 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaBaseDatosConELPropioDAO.java
+Starting at line 58 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\negocio\ProbarNegocioBusquedaParejasParametrico.java
+Starting at line 29 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\negocio\ProbarNegocioBusquedaParejasCopyPasteDatos.java
+Starting at line 43 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\ProbarPersistenciaMemoria.java
+
+		personas = 
+				Arrays.asList(
+					new Persona(1L,"pepe",77,1.67f,Persona.HOMBRE),
+					new Persona(2L,"luis",62,1.77f,Persona.HOMBRE),
+					new Persona(3L,"ana",71,1.77f,Persona.MUJER),
+					new Persona(4L,"maria",79,1.57f,Persona.MUJER));
+=====================================================================
+Found a 9 line (42 tokens) duplication in the following files: 
+Starting at line 79 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaDbUnit.java
+Starting at line 83 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaBaseDatosConELPropioDAO.java
+Starting at line 64 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\ProbarPersistenciaMemoria.java
+
+		assertEquals("se incrementa en...",4,ti);
+		
+		Persona persona = personaDao.buscar(1L);
+		assertNotNull(persona);
+		assertEquals("pepe", persona.getNombre());
+		
+		personaDao.borrar(persona);
+		persona = personaDao.buscar(1L);
+		assertNull(persona);
+=====================================================================
+Found a 7 line (32 tokens) duplication in the following files: 
+Starting at line 31 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaBaseDatosConELPropioDAO.java
+Starting at line 19 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\GenerarDataSetDBUnit.java
+
+	public static void alPrincipio() throws Exception {
+		//creamos el pool de conexiones
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setUrl("jdbc:mysql://localhost:3306/test");
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUsername("root");
+		dataSource.setPassword("root");
+=====================================================================
+Found a 5 line (30 tokens) duplication in the following files: 
+Starting at line 33 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaDbUnit.java
+Starting at line 33 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\ProbarPersistenciaBaseDatosConELPropioDAO.java
+Starting at line 21 of E:\workspaces\ws_ecosistemas\parejas.core\src\test\java\parejas\pruebas\persistencia\GenerarDataSetDBUnit.java
+
+		dataSource=new BasicDataSource();
+		dataSource.setUrl("jdbc:mysql://localhost:3306/test");
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUsername("root");
+		dataSource.setPassword("root");

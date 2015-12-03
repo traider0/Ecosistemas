@@ -1,0 +1,21 @@
+package parejas.negocio;
+
+import java.util.List;
+
+import parejas.modelo.Persona;
+
+public class ServicioBusquedaParejasImpl implements ServicioBusquedaParejas {
+
+	@Override
+	public Persona encontrarIdeal(Persona usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Persona> encontrarAfines(Persona usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

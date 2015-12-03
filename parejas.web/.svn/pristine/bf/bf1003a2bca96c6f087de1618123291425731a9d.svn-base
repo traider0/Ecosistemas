@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: integracion.EncontrarIdealSeleniumRC
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 25.734 sec <<< FAILURE! - in integracion.EncontrarIdealSeleniumRC
+testEncontrarafines(integracion.EncontrarIdealSeleniumRC)  Time elapsed: 25.734 sec  <<< ERROR!
+java.lang.RuntimeException: Could not start Selenium session: Failed to start new browser session: Error while launching browser
+	at com.thoughtworks.selenium.HttpCommandProcessor.throwAssertionFailureExceptionOrError(HttpCommandProcessor.java:112)
+	at com.thoughtworks.selenium.HttpCommandProcessor.doCommand(HttpCommandProcessor.java:106)
+	at com.thoughtworks.selenium.HttpCommandProcessor.getString(HttpCommandProcessor.java:275)
+	at com.thoughtworks.selenium.HttpCommandProcessor.start(HttpCommandProcessor.java:237)
+	at com.thoughtworks.selenium.DefaultSelenium.start(DefaultSelenium.java:100)
+	at integracion.EncontrarIdealSeleniumRC.setUp(EncontrarIdealSeleniumRC.java:16)
+

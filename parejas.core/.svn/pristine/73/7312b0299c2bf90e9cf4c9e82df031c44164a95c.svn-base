@@ -1,0 +1,62 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<body>
+	<h3>Busqueda de Parejas</h3>
+	Dada la lista de usarios
+	<table concordion:execute="cargarDatos(#id,#nombre,#edad,#altura,#sexo)">
+		<tr>
+			<th concordion:set="#id">ID</th>	
+			<th concordion:set="#nombre">Nombre</th>
+			<th concordion:set="#edad">Edad</th>
+			<th concordion:set="#altura">Altura</th>
+			<th concordion:set="#sexo">Sexo</th>
+		</tr>		
+		<tr>
+			<td>1</td>
+			<td>Ana</td>
+			<td>76</td>
+			<td>1.72</td>
+			<td>M</td>
+		</tr>
+		<tr>
+		<td>2</td>
+			<td >Lola</td>
+			<td>71</td>
+			<td>1.62</td>
+			<td>M</td>
+		</tr>
+		<tr>
+		<td>3</td>
+			<td>Pepe</td>
+			<td>76</td>
+			<td>1.71</td>
+			<td>H</td>
+		</tr>
+		<tr>
+		<td>4</td>
+			<td>Luis</td>
+			<td>89</td>
+			<td>1.72</td>
+			<td>H</td>
+		</tr>
+	</table>
+	<p concordion:execute="#ideal=buscarIdeal(#nombre,#edad,#altura,#sexo)"> 
+	cuando el usuario <b concordion:set="#nombre">Fer</b>,
+	 <b concordion:set="#edad">71</b>, <b concordion:set="#altura">1.79</b>, 
+	 <b concordion:set="#sexo">H</b> usa el servicio
+		tiene como ideal <span concordion:assertEquals="#ideal.nombre">Ana</span>
+	</p>
+	y tiene como afines
+		<table concordion:verifyRows="#nombreAfin:buscarAfines(#nombre,#edad,#altura,#sexo)">
+		<tr>
+			<th concordion:assertEquals="#nombreAfin">Afines</th>
+		</tr>	
+		<tr>
+			<td>Ana</td>
+		</tr>
+		<tr>
+			<td>Lola</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

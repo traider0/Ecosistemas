@@ -1,0 +1,12 @@
+<!ELEMENT dataset (
+    personas*)>
+
+<!ELEMENT personas EMPTY>
+<!ATTLIST personas
+    id CDATA #REQUIRED
+    nombre CDATA #REQUIRED
+    edad CDATA #REQUIRED
+    altura CDATA #REQUIRED
+    sexo CDATA #REQUIRED
+>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.biblioteca.modelo.entidades.Libro" table="libros" catalog="biblioteca">
+        <id name="isbn" type="java.lang.Integer">
+            <column name="isbn" />
+            <generator class="identity" />
+        </id>
+        <property name="titulo" type="string">
+            <column name="titulo" length="10" not-null="true" unique="true" />
+        </property>
+        <property name="autor" type="string">
+            <column name="autor" length="20" not-null="true" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>

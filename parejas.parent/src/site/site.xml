@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 decoration-1.0.0.xsd "
+	name="libreria">
+	<bannerLeft>
+		<name>Curso Ecosistemas</name>
+		<src>img/logo.gif</src>
+		<href>http://www.pronoide.com</href>
+	</bannerLeft>
+	<bannerRight>
+		<src>
+			http://i.creativecommons.org/l/by-nc-sa/2.5/es/88x31.png
+		</src>
+		<href>
+			http://creativecommons.org/licenses/by-nc-sa/2.5/es/deed.es
+		</href>
+	</bannerRight>
+
+	<body>
+		<links>
+			<item name="pronoide" href="http://www.pronoide.com" />
+			<item name="google" href="http://google.com/" />
+			<item name="yahoo" href="http://yahoo.com/" />
+		</links>
+
+		<menu name="Contenido Nuevo">
+			<item name="Introducción" href="indice.html" />
+			<item name="Pagina2" href="pagina2.html" />
+		</menu>
+		<menu name="FAQ">
+			<item name="preguntas frecuentes" href="faq.html" />
+		</menu>
+
+		<menu ref="reports" />
+
+
+	</body>
+
+</project>

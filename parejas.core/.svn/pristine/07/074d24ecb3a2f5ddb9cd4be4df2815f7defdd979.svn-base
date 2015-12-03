@@ -1,0 +1,79 @@
+package parejas.pruebas.negocio;
+
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+import parejas.modelo.Persona;
+import parejas.negocio.ServicioBusquedaParejas;
+import parejas.negocio.ServicioBusquedaParejasImpl;
+import parejas.persistencia.PersonaDao;
+import parejas.persistencia.PersonaDaoMemoriaImpl;
+
+@RunWith(Parameterized.class)
+public class ProbarNegocioBusquedaParejasParametrico {
+	//Helpers 
+	private PersonaDao personaDao=new PersonaDaoMemoriaImpl();
+	//SUT
+	private ServicioBusquedaParejas buscador=new ServicioBusquedaParejasImpl(personaDao);
+	private Persona usuario;
+	private boolean tieneIdeal;
+	private String nombreIdeal;
+	private int numeroAfines;
+	
+	
+	
+	public ProbarNegocioBusquedaParejasParametrico(Persona usuario,
+			boolean tieneIdeal, String nombreIdeal, int numeroAfines) {
+		super();
+		this.usuario = usuario;
+		this.tieneIdeal = tieneIdeal;
+		this.nombreIdeal = nombreIdeal;
+		this.numeroAfines = numeroAfines;
+	}
+
+	@Parameters
+ 	public static Iterable<Object[]> data(){
+ 		return Arrays.asList(
+ 			new Object[][]{
+ 					{new Persona(null,"Fernando",70,1.79f,Persona.HOMBRE),true,"ana",2},
+ 					{new Persona(null,"Rosa",30,1.69f,Persona.MUJER),false,null,2}
+ 			});
+ 	}
+
+	@Before
+	public void prepara() throws Exception {
+		//preparar el entorno
+		List<Persona> personas = Arrays.asList(
+			new Persona(1L,"pepe",77,1.67f,Persona.HOMBRE),
+			new Persona(2L,"luis",62,1.77f,Persona.HOMBRE),
+			new Persona(3L,"ana",71,1.77f,Persona.MUJER),
+			new Persona(4L,"maria",79,1.57f,Persona.MUJER));
+		for (Persona persona : personas) {
+			personaDao.guardar(persona);
+		}
+	}
+	
+	
+	@Test(timeout=1000)
+	public void probarServicio() throws Exception {
+	
+		Persona ideal=buscador.encontrarIdeal(usuario);
+		assertEquals(tieneIdeal, ideal!=null);
+		if(tieneIdeal)
+			assertEquals(nombreIdeal,ideal.getNombre());
+		
+		List<Persona>afines=buscador.encontrarAfines(usuario);
+		assertEquals(numeroAfines, afines.size());
+		
+	}
+}

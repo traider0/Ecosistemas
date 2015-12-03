@@ -1,0 +1,47 @@
+package integracion;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+
+import org.junit.Test;
+
+import static org.hamcrest.Matchers.*;
+
+import org.xml.sax.SAXException;
+
+import com.meterware.httpunit.WebConversation;
+import com.meterware.httpunit.WebForm;
+import com.meterware.httpunit.WebResponse;
+
+public class ProbarFuncionalidadWebHttpUnit {
+
+	private static final String URL_BASE = "http://localhost:8080/";
+
+	@Test(timeout=5000)
+	public void test() throws Exception {
+		WebConversation conversation = new WebConversation();
+		WebResponse paginaBusquedas = 
+			conversation.getResponse(URL_BASE+"busquedas.jsp");
+		assertThat(paginaBusquedas.getTitle(),
+			is(".:Encuentra tu pareja Ideal:."));
+		
+		WebForm formularioBusquedas = 
+				paginaBusquedas.getForms()[0];
+		formularioBusquedas.setParameter("nombre", "Fernando");
+		formularioBusquedas.setParameter("edad", "71");
+		formularioBusquedas.setParameter("altura", "1.71");
+		formularioBusquedas.setParameter("sexo", "H");
+		WebResponse paginaResultado = formularioBusquedas.submit();
+		
+		assertThat(paginaResultado.getTitle(),
+				is(".:Resultados de la busqueda:."));
+		assertThat(paginaResultado.getText(),
+				allOf(
+					containsString("Enhorabuena"),
+					containsString("ana"))
+				);
+			
+	}
+
+}

@@ -1,0 +1,29 @@
+<!ELEMENT dataset (
+    departments*,
+    employees*,
+    dept_manager*)>
+
+<!ELEMENT departments EMPTY>
+<!ATTLIST departments
+    dept_no CDATA #REQUIRED
+    dept_name CDATA #REQUIRED
+>
+
+<!ELEMENT employees EMPTY>
+<!ATTLIST employees
+    emp_no CDATA #REQUIRED
+    birth_date CDATA #REQUIRED
+    first_name CDATA #REQUIRED
+    last_name CDATA #REQUIRED
+    gender CDATA #REQUIRED
+    hire_date CDATA #REQUIRED
+>
+
+<!ELEMENT dept_manager EMPTY>
+<!ATTLIST dept_manager
+    dept_no CDATA #REQUIRED
+    emp_no CDATA #REQUIRED
+    from_date CDATA #REQUIRED
+    to_date CDATA #REQUIRED
+>
+
