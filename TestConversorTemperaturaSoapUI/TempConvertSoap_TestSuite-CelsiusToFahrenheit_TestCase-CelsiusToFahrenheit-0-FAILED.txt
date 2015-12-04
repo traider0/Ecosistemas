@@ -1,0 +1,91 @@
+Status: FAILED
+Time Taken: 538
+Size: 14017
+Timestamp: Fri Dec 04 13:00:23 CET 2015
+TestStep: CelsiusToFahrenheit
+
+----------------- Messages ------------------------------
+[XPath Match] XPathContains assertion failed for path [declare namespace ns1='http://www.w3schools.com/xml/';
+//ns1:CelsiusToFahrenheitResult/text()] : NullPointerException:null
+
+----------------- Properties ------------------------------
+Encoding: UTF-8
+Endpoint: http://localhost:8080
+
+---------------- Request ---------------------------
+Request Headers: Host : localhost:8080
+Content-Length : 317
+SOAPAction : "http://www.w3schools.com/xml/CelsiusToFahrenheit"
+Accept-Encoding : gzip,deflate
+User-Agent : Jakarta Commons-HttpClient/3.1
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:x="http://www.w3schools.com/xml/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <x:CelsiusToFahrenheit>
+         <!--Optional:-->
+         <x:Celsius>30</x:Celsius>
+      </x:CelsiusToFahrenheit>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: X-Jenkins : 1.639
+X-Hudson : 1.395
+#status# : HTTP/1.1 200 OK
+Content-Length : 4340
+Expires : Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie : JSESSIONID.2b8a548f=17hjm3rhbkvcxobjxkfynm7qm;Path=/;HttpOnly
+X-Jenkins-CLI-Port : 1348
+X-Hudson-CLI-Port : 1348
+X-SSH-Endpoint : localhost:1347
+Server : Jetty(winstone-2.9)
+X-Content-Type-Options : nosniff
+Cache-Control : no-cache,no-store,must-revalidate
+X-Frame-Options : sameorigin
+X-Hudson-Theme : default
+X-Instance-Identity : MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy20Xj5ilrpGNCP8YCi63+PDMpLupu1aXExo9i05ttPyCRlpe6OfC0AHxnL624OjVAxshB4plxQdFKCQLO7FzSkhzkfR5ZoC+e0MEnD0FSOOPUG/HRZQbdEMukwW0VWvYK9JDrNt/Lmixei9eNxJ0N8+qW71xFw63UNskePxGPp4OzNSeoAg5eDpkZ1A8cve6rPoxA11++znk5EI9B0NRnCEhR6u9D+pe5p7ld6+ZLqHhBunZHmndjhrXEgAM4vaDFy5Qe7/wapa6KfZca4kik7MeYJJZS/xjLp7K4+EOH4HMG4qDWS5LtaUjo1hiF/Rofb8w/QeND1HxTlGBcWlw3wIDAQAB
+Content-Encoding : gzip
+X-Jenkins-Session : 8998645e
+Content-Type : text/html;charset=UTF-8
+X-Jenkins-CLI2-Port : 1348
+
+
+
+
+
+
+    
+    <!DOCTYPE html><html><head resURL="/static/8998645e">
+    
+
+    <title>Panel de control [Jenkins]</title><link rel="stylesheet" type="text/css" href="/static/8998645e/css/style.css" /><link rel="stylesheet" type="text/css" href="/static/8998645e/css/color.css" /><link rel="stylesheet" type="text/css" href="/static/8998645e/css/responsive-grid.css" /><link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/static/8998645e/favicon.ico" /><link color="black" rel="mask-icon" href="/images/mask-icon.svg" /><script>var isRunAsTest=false; var rootURL=""; var resURL="/static/8998645e";</script><script src="/static/8998645e/scripts/prototype.js" type="text/javascript"></script><script src="/static/8998645e/scripts/behavior.js" type="text/javascript"></script><script src='/adjuncts/8998645e/org/kohsuke/stapler/bind.js' type='text/javascript'></script><script src="/static/8998645e/scripts/yui/yahoo/yahoo-min.js"></script><script src="/static/8998645e/scripts/yui/dom/dom-min.js"></script><script src="/static/8998645e/scripts/yui/event/event-min.js"></script><script src="/static/8998645e/scripts/yui/animation/animation-min.js"></script><script src="/static/8998645e/scripts/yui/dragdrop/dragdrop-min.js"></script><script src="/static/8998645e/scripts/yui/container/container-min.js"></script><script src="/static/8998645e/scripts/yui/connection/connection-min.js"></script><script src="/static/8998645e/scripts/yui/datasource/datasource-min.js"></script><script src="/static/8998645e/scripts/yui/autocomplete/autocomplete-min.js"></script><script src="/static/8998645e/scripts/yui/menu/menu-min.js"></script><script src="/static/8998645e/scripts/yui/element/element-min.js"></script><script src="/static/8998645e/scripts/yui/button/button-min.js"></script><script src="/static/8998645e/scripts/yui/storage/storage-min.js"></script><script src="/static/8998645e/scripts/hudson-behavior.js" type="text/javascript"></script><script src="/static/8998645e/scripts/sortable.js" type="text/javascript"></script><script>crumb.init("", "");</script><link rel="stylesheet" type="text/css" href="/static/8998645e/scripts/yui/container/assets/container.css" /><link rel="stylesheet" type="text/css" href="/static/8998645e/scripts/yui/assets/skins/sam/skin.css" /><link rel="stylesheet" type="text/css" href="/static/8998645e/scripts/yui/container/assets/skins/sam/container.css" /><link rel="stylesheet" type="text/css" href="/static/8998645e/scripts/yui/button/assets/skins/sam/button.css" /><link rel="stylesheet" type="text/css" href="/static/8998645e/scripts/yui/menu/assets/skins/sam/menu.css" /><link title="Jenkins" rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" /><meta name="ROBOTS" content="INDEX,NOFOLLOW" /><link title="Jenkins:Todo (all builds)" rel="alternate" type="application/rss+xml" href="/rssAll" /><link title="Jenkins:Todo (all builds) (RSS 2.0)" rel="alternate" type="application/rss+xml" href="/rssAll?flavor=rss20" /><link title="Jenkins:Todo (failed builds)" rel="alternate" type="application/rss+xml" href="/rssFailed" /><link title="Jenkins:Todo (failed builds) (RSS 2.0)" rel="alternate" type="application/rss+xml" href="/rssFailed?flavor=rss20" /><script src="/static/8998645e/scripts/yui/cookie/cookie-min.js"></script><script>
+              YAHOO.util.Cookie.set("screenResolution", screen.width+"x"+screen.height);
+            </script><script src="/static/8998645e/scripts/yui/cookie/cookie-min.js"></script></head><body data-model-type="hudson.model.AllView" id="jenkins" data-version="jenkins-1.639" class="yui-skin-sam jenkins-1.639"><a href="#skip2content" class="skiplink">Skip to content</a><div id="page-head"><div id="header"><div class="logo"><a id="jenkins-home-link" href="/"><img id="jenkins-head-icon" alt="title" src="/static/8998645e/images/headshot.png" /><img id="jenkins-name-icon" height="34" alt="title" width="139" src="/static/8998645e/images/title.png" /></a></div><div class="login"> <a href="/login?from=%2F"><b>Iniciar Sesion</b></a>
+    |
+    <a href="/signup"><b>registrarse</b></a></div><div class="searchbox hidden-xs"><form style="position:relative;" name="search" action="/search/" class="no-json" method="get"><div id="search-box-minWidth"></div><div id="search-box-sizer"></div><div id="searchform"><input id="search-box" placeholder="búsqueda" name="q" class="has-default-text" /> <a href="http://wiki.jenkins-ci.org/display/JENKINS/Search+Box"><img style="width: 16px; height: 16px; " class="icon-help icon-sm" src="/static/8998645e/images/16x16/help.png" /></a><div id="search-box-completion"></div><script>createSearchBox("/search/");</script></div></form></div></div><div id="breadcrumbBar"><tr id="top-nav"><td id="left-top-nav" colspan="2"><link rel='stylesheet' href='/adjuncts/8998645e/lib/layout/breadcrumbs.css' type='text/css' /><script src='/adjuncts/8998645e/lib/layout/breadcrumbs.js' type='text/javascript'></script><div class="top-sticker noedge"><div class="top-sticker-inner"><div id="right-top-nav"><div id="right-top-nav"><div class="smallfont"><a href="?auto_refresh=true">ACTIVAR AUTO REFRESCO</a></div></div></div><ul id="breadcrumbs"><li class="item"><a class="model-link inside" href="/">Jenkins </a></li><li class="children" href="/"></li></ul><div id="breadcrumb-menu-target"></div></div></div></td></tr></div></div><div id="page-body"><div id="side-panel"><div id="tasks"><div class="task"><a class="task-icon-link" href="/asynchPeople/"><img style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="icon-user icon-md" src="/static/8998645e/images/24x24/user.png" /></a> <a class="task-link" href="/asynchPeople/">Personas</a></div><div class="task"><a class="task-icon-link" href="/view/Todo/builds"><img style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="icon-notepad icon-md" src="/static/8998645e/images/24x24/notepad.png" /></a> <a class="task-link" href="/view/Todo/builds">Historial de trabajos</a></div><div class="task"><a class="task-icon-link" href="/projectRelationship"><img style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="icon-search icon-md" src="/static/8998645e/images/24x24/search.png" /></a> <a class="task-link" href="/projectRelationship">Relacion entre proyectos</a></div><div class="task"><a class="task-icon-link" href="/fingerprintCheck"><img style="width: 24px; height: 24px; width: 24px; height: 24px; margin: 2px;" class="icon-fingerprint icon-md" src="/static/8998645e/images/24x24/fingerprint.png" /></a> <a class="task-link" href="/fingerprintCheck">Comprobar firma de archivos</a></div><div class="task"><a class="task-icon-link" href="/credential-store"><img style="width: 24px; height: 24px; margin: 2px;" alt="" src="/static/8998645e/plugin/credentials/images/48x48/credentials.png" /></a> <a class="task-link" href="/credential-store">Credentials</a></div></div><div id="buildQueue" class="container-fluid pane-frame track-mouse expanded"><div class="row"><div class="col-xs-24 pane-header"><a title="collapse" class="collapse" href="/toggleCollapse?paneId=buildQueue"><img style="width: 16px; height: 16px; " alt="collapse" class="icon-collapse icon-sm" src="/static/8998645e/images/16x16/collapse.png" /></a>Trabajos en la cola</div></div><div class="row pane-content"><table class="pane "><tr><td class="pane" colspan="2">No hay trabajos en la cola</td></tr></table></div></div><script defer="defer">refreshPart('buildQueue',"/ajaxBuildQueue");</script><div id="executors" class="container-fluid pane-frame track-mouse expanded"><div class="row"><div class="col-xs-24 pane-header"><a title="collapse" class="collapse" href="/toggleCollapse?paneId=executors"><img style="width: 16px; height: 16px; " alt="collapse" class="icon-collapse icon-sm" src="/static/8998645e/images/16x16/collapse.png" /></a><a href='/computer/'>Estado del ejecutor de construcciones</a></div></div><div class="row pane-content"><table class="pane "><colgroup><col width="30" /><col width="200*" /><col width="24" /></colgroup><tr></tr><tr><td class="pane" align="right" style="vertical-align: top">1</td><td class="pane">Inactivo</td><td class="pane"></td><td class="pane"></td></tr><tr><td class="pane" align="right" style="vertical-align: top">2</td><td class="pane">Inactivo</td><td class="pane"></td><td class="pane"></td></tr></table></div></div><script defer="defer">refreshPart('executors',"/ajaxExecutors");</script></div><div id="main-panel"><a name="skip2content"></a><div id="view-message"><div id="systemmessage"></div><div id="description"><div></div></div></div><div class="dashboard"><div id="projectstatus-tabBar"><div class="tabBarFrame "><div class="tabBar"><div class="tab active"><input id="tab-1449230423977-" name="tab-group-1449230423977" type="radio" checked="checked" /><a class="" href="/">Todo</a></div></div><div class="tabBarBaseline"></div></div></div><div class="pane-frame"><table id="projectstatus" class="sortable pane bigtable stripped-odd"><tr class="header"><th tooltip="Estado de la última construcción">&nbsp;&nbsp;&nbsp;S</th><th tooltip="Informe de estado de las ejecuciones más recientes">&nbsp;&nbsp;&nbsp;W</th><th initialSortDir="down">Nombre</th><th>Último Éxito</th><th>Último Fallo</th><th>Última Duración</th><th width="1"> </th><th> </th></tr><tr id="job_Biblioteca-Modelo-Trunk" class=" job-status-blue"><td data="4"><img style="width: 32px; height: 32px; " alt="Correcto" class="icon-blue icon-lg" src="/static/8998645e/images/32x32/blue.png" tooltip="Correcto" /></td><td data="100" class="healthReport" onmouseover="this.className='healthReport hover';return true;
+        " onmouseout="this.className='healthReport';return true;"><a class="build-health-link" href="job/Biblioteca-Modelo-Trunk/lastBuild"><img style="width: 32px; height: 32px; " alt="100%" class="icon-health-80plus icon-lg" src="/static/8998645e/images/32x32/health-80plus.png" /></a><div class="healthReportDetails"><table border="0"><thead><tr><th align="left">W</th><th align="left">Descripción</th><th align="right">%</th></tr></thead><tbody><tr><td align="left"><img style="width: 16px; height: 16px; " class="icon-health-80plus icon-sm" src="/static/8998645e/images/16x16/health-80plus.png" /></td><td>Resultado de los tests: 0 tests fallidos de un total de 2 tests.</td><td align="right">100</td></tr><tr><td align="left"><img style="width: 16px; height: 16px; " class="icon-health-80plus icon-sm" src="/static/8998645e/images/16x16/health-80plus.png" /></td><td>Estabilidad: No hay ejecuciones recientes con fallos.</td><td align="right">100</td></tr></tbody></table></div></td><td><a class="model-link inside" href="job/Biblioteca-Modelo-Trunk/">Biblioteca<wbr>-Modelo<wbr>-Trunk</a></td><td data="2015-12-04T11:52:33Z">
+        7 Min 50 Seg 
+        - <a class="model-link inside" href="job/Biblioteca-Modelo-Trunk/lastSuccessfulBuild/">#25</a></td><td data="2015-12-04T08:54:55Z">
+        3 Hor 5 Min 
+        - <a class="model-link inside" href="job/Biblioteca-Modelo-Trunk/lastFailedBuild/">#12</a></td><td data="23484">23 Seg</td><td></td><td> </td></tr></table></div><div><table style="width:100%"><tr><td>Icono:
+         <a href="/iconSize?16x16">S</a> <a href="/iconSize?24x24">M</a> L</td><td><div align="right" style="margin:1em"><a href="/legend">Guía de iconos</a><span style="padding-left:1em"><a href="rssAll"><img height="16" alt="Feed" width="16" src="/static/8998645e/images/atom.gif" border="0" /></a> <a href="rssAll">RSS para todos</a></span><span style="padding-left:1em"><a href="rssFailed"><img height="16" alt="Feed" width="16" src="/static/8998645e/images/atom.gif" border="0" /></a> <a href="rssFailed">RSS para fallas</a></span><span style="padding-left:1em"><a href="rssLatest"><img height="16" alt="Feed" width="16" src="/static/8998645e/images/atom.gif" border="0" /></a> <a href="rssLatest">RSS para los más recientes</a></span></div></td></tr></table></div></div></div></div><footer><div class="container-fluid"><div class="row"><div class="col-md-6" id="footer"></div><div class="col-md-18"><span class="page_generated">Página generada: 04-dic-2015 13:00:24</span><span class="rest_api"><a href="api/">REST API</a></span><span class="jenkins_ver"><a href="http://jenkins-ci.org/">Jenkins ver. 1.639</a></span><div id="l10n-dialog" class="dialog"></div><div id="l10n-footer" style="display:none; float:left"><a href="#" onclick="return showTranslationDialog();"><img src="/static/8998645e/plugin/translation/flags.png" />
+      Ayudanos a traducir ésta página
+    </a></div><script>var footer = document.getElementById('l10n-footer');
+    var f = document.getElementById('footer');
+    f.insertBefore(footer,f.firstChild);
+    footer.style.display="block";
+
+    var translation={}; 
+    translation.bundles = "Nqb5ETfD0d8vXKMPP8VuEMjW/FRWM6BaFHjF96QRvXeG2dhkVshvC7E/itQ5jSiS8LVgVc/uyq05SERO5Val4ZxMiH7uvHZZnBEt55DVUoONMpBeSbv+AKRq6WotgLBRgWnQ5sPkAr7y0m82lF/l2t3gDTEXCtqPOMyzfTffgCnNsUfyFA2+xQxIA1Loj+1TFnN5HdB2kBjODfa+U7lxpywHLwlPvCWZJu8fIjDmvARrJ2YudBcciWdQpHfK5xwVoqHt3bLWOzceEB1MUl6QK0StBKGHsYa/SSRhDxT0Dxw3X3LM9Zk1TIDe1WGHBXEHlxOMNwzuqCejthFt3vz75Thy1aHqkR37hlMIgSwYuyMPD/PW8EXd15RwU8nl2sXH8y9VtNEGUDlgQFlm/W1up4xP2eJ77muOL6J9UzrlBGDr2P9RxT1bYh19avJg3afd8xRQ7I6Ew+sxP34LUn6lvGtYPJAK71QEp3kF2ERibHKnPhVytA8zidw8U/ZGj3V2gg5QjcGsY/gERIuTk0MV/ZjyYLFJaLCakSAbD+ZBrWEvQD23Pu6IzSLVZrGKUSxhma+Vw3goZ/NdlIme3aUEzxWoNqd12gG7ITKpnxtK+aYyOSc8tg9X/IEp8Wr4egoel6/SSk5vD5rzdSn44SnHANik4JSrlUmDFTERtVIWh9DcheFCXo4O5cfR03tHwjc2xX8+SPkLHPTb6ws8rgWH2Il8ny3X70igbifRm9HG81mjMXnQRspxXDk1DAkJ7gqXLWIaK4fG91CNdxwDpMPsdfO+HpPLnb/prqRyX/7+KWD/5xbq4mtejZyCRzL5HdVo5R5Oj6/wZNX8oJ+Ur7szCw==";
+    translation.detectedLocale = "";
+
+    function showTranslationDialog() {
+      if(!translation.launchDialog)
+        loadScript("/static/8998645e/plugin/translation/dialog.js");
+      else
+        translation.launchDialog();
+      return false; 
+    }</script></div></div></div></footer></body></html>

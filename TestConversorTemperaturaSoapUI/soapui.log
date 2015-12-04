@@ -1,0 +1,15 @@
+2015-12-04 13:01:51,618 WARN  [SoapUI] Missing folder [E:\workspaces\workspace\TestConversorTemperaturaSoapUI\.\ext] for external libraries
+2015-12-04 13:01:51,618 INFO  [DefaultSoapUICore] Creating new settings at [C:\Documents and Settings\servicios\soapui-settings.xml]
+2015-12-04 13:01:52,821 INFO  [WsdlProject] Loaded project from [file:/E:/workspaces/workspace/TestConversorTemperaturaSoapUI/PruebasConversorTemperatura-soapui-project.xml]
+2015-12-04 13:01:52,836 WARN  [WsdlProject] Project 'PruebasConversorTemperatura' is from a newer version (5.2.1) of soapUI than this (4.0.1) and parts of it may be incompatible or incorrect. Saving this project with this version of soapUI may cause it to function differently.
+2015-12-04 13:01:53,211 INFO  [SoapUITestCaseRunner] Running soapUI tests in project [PruebasConversorTemperatura]
+2015-12-04 13:01:53,211 INFO  [SoapUITestCaseRunner] Running Project [PruebasConversorTemperatura], runType = SEQUENTIAL
+2015-12-04 13:01:53,227 INFO  [SoapUITestCaseRunner] Running soapUI testcase [CelsiusToFahrenheit TestCase]
+2015-12-04 13:01:53,243 INFO  [SoapUITestCaseRunner] running step [CelsiusToFahrenheit]
+2015-12-04 13:01:54,165 INFO  [SoapUITestCaseRunner] Assertion [XPath Match] has status VALID
+2015-12-04 13:01:54,165 INFO  [SoapUITestCaseRunner] running step [TransferFahrenheit]
+2015-12-04 13:01:54,227 INFO  [SoapUITestCaseRunner] running step [FahrenheitToCelsius]
+2015-12-04 13:01:54,446 INFO  [SoapUITestCaseRunner] Assertion [SOAP Response] has status VALID
+2015-12-04 13:01:54,446 INFO  [SoapUITestCaseRunner] Assertion [XPath Match] has status VALID
+2015-12-04 13:01:54,446 INFO  [SoapUITestCaseRunner] Finished running soapUI testcase [CelsiusToFahrenheit TestCase], time taken: 1193ms, status: FINISHED
+2015-12-04 13:01:54,446 INFO  [SoapUITestCaseRunner] Project [PruebasConversorTemperatura] finished with status [FINISHED] in 1235ms
