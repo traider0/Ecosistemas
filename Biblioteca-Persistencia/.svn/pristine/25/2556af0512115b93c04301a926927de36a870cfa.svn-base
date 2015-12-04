@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <libros isbn="1" titulo="Pinocho" autor="Anonimo"/>
+  <libros isbn="2" titulo="Pipi" autor="Juan"/>
+  <libros isbn="3" titulo="Caperu" autor="Francisco"/>
+</dataset>
