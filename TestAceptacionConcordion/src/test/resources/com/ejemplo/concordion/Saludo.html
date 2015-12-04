@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Execute ejecuta antes de la sentencia, cualquier sentencia set dentro del nodo afectado
+		por el execute-->
+	Cuando el usuario se Loguea con el "First Name", obtiene el Saludo "Greeting"
+	<table concordion:execute="#greeting = greetingFor(#firstName)">
+		<tr>
+			<th concordion:set="#firstName">First Name</th>
+			<th concordion:assertEquals="#greeting">Greeting</th>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>Hello Bob!</td>
+		</tr>
+		<tr>
+			<td>Victor</td>
+			<td>Hello Victor!</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>
